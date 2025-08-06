@@ -12,8 +12,8 @@ export const Home = () => {
   const featuredProducts = [
     {
       id: "1",
-      name: "Premium Nigiri Set",
-      description: "A carefully curated selection of our finest nigiri featuring salmon, tuna, and shrimp.",
+      name: "Zestaw Premium Nigiri",
+      description: "Starannie dobrana selekcja naszych najlepszych nigiri z łososiem, tuńczykiem i krewetkami.",
       price: 24.99,
       originalPrice: 29.99,
       image: nigiriImage,
@@ -22,8 +22,8 @@ export const Home = () => {
     },
     {
       id: "2", 
-      name: "Signature Maki Collection",
-      description: "An assortment of our most popular maki rolls including California, spicy tuna, and salmon avocado.",
+      name: "Kolekcja Signature Maki",
+      description: "Asortyment naszych najpopularniejszych rolek maki, w tym California, pikantny tuńczyk i łosoś z awokado.",
       price: 32.99,
       image: makiImage,
       rating: 4.9,
@@ -31,8 +31,8 @@ export const Home = () => {
     },
     {
       id: "3",
-      name: "Chef's Special Platter",
-      description: "Our master chef's daily selection of premium sushi and sashimi.",
+      name: "Specjalny Talerz Szefa Kuchni",
+      description: "Codziennie zmieniająca się selekcja premium sushi i sashimi od naszego mistrza kuchni.",
       price: 45.99,
       image: heroImage,
       rating: 5.0,
@@ -53,23 +53,23 @@ export const Home = () => {
         
         <div className="relative z-10 text-center space-y-6 max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground">
-            Crafted with
+            Stworzone z
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block">
-              Passion & Precision
+              Pasją i Precyzją
             </span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experience the art of authentic Japanese sushi, made fresh daily with the finest ingredients by our master chefs.
+            Doświadcz sztuki autentycznego japońskiego sushi, przygotowywanego codziennie ze świeżych składników przez naszych mistrzów kuchni.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="hero-gradient hover:shadow-glow-primary text-lg px-8 py-6" asChild>
               <Link to="/categories">
-                Order Now <ArrowRight className="ml-2 h-5 w-5" />
+                Zamów Teraz <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
               <Link to="/about">
-                Our Story
+                Nasza Historia
               </Link>
             </Button>
           </div>
@@ -81,10 +81,10 @@ export const Home = () => {
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Why Choose SushiCraft?
+              Dlaczego Sushi Strefa?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We're committed to delivering exceptional quality and unforgettable flavors.
+              Jesteśmy zobowiązani do dostarczania wyjątkowej jakości i niezapomnianych smaków.
             </p>
           </div>
 
@@ -94,9 +94,9 @@ export const Home = () => {
                 <div className="w-16 h-16 hero-gradient rounded-full mx-auto flex items-center justify-center">
                   <Star className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Premium Quality</h3>
+                <h3 className="text-xl font-semibold text-foreground">Najwyższa Jakość</h3>
                 <p className="text-muted-foreground">
-                  We source only the finest, freshest ingredients from trusted suppliers to ensure every bite is perfect.
+                  Pozyskujemy tylko najlepsze, najświeższe składniki od zaufanych dostawców, aby każdy kęs był idealny.
                 </p>
               </CardContent>
             </Card>
@@ -106,9 +106,9 @@ export const Home = () => {
                 <div className="w-16 h-16 hero-gradient rounded-full mx-auto flex items-center justify-center">
                   <Clock className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Made Fresh Daily</h3>
+                <h3 className="text-xl font-semibold text-foreground">Codziennie Świeże</h3>
                 <p className="text-muted-foreground">
-                  Every piece of sushi is crafted fresh to order by our experienced chefs using traditional techniques.
+                  Każdy kawałek sushi jest przygotowywany na świeżo na zamówienie przez naszych doświadczonych kucharzy z użyciem tradycyjnych technik.
                 </p>
               </CardContent>
             </Card>
@@ -118,9 +118,9 @@ export const Home = () => {
                 <div className="w-16 h-16 hero-gradient rounded-full mx-auto flex items-center justify-center">
                   <Truck className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Fast Delivery</h3>
+                <h3 className="text-xl font-semibold text-foreground">Szybka Dostawa</h3>
                 <p className="text-muted-foreground">
-                  Quick and careful delivery to preserve freshness and ensure your sushi arrives in perfect condition.
+                  Szybka i ostrożna dostawa, aby zachować świeżość i zapewnić, że sushi dotrze w idealnym stanie.
                 </p>
               </CardContent>
             </Card>
@@ -133,10 +133,10 @@ export const Home = () => {
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Featured Selections
+              Polecane Selekcje
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover our most popular and chef-recommended sushi creations.
+              Odkryj nasze najpopularniejsze i polecane przez szefa kuchni kreacje sushi.
             </p>
           </div>
 
@@ -149,7 +149,7 @@ export const Home = () => {
           <div className="text-center mt-12">
             <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
               <Link to="/categories">
-                View Full Menu <ArrowRight className="ml-2 h-5 w-5" />
+                Zobacz Pełne Menu <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -162,24 +162,24 @@ export const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Our Culinary Journey
+                Nasza Kulinarna Podróż
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Founded by Master Chef Hiroshi Tanaka, SushiCraft brings authentic Japanese traditions to your table. With over 20 years of experience and training in Tokyo's most prestigious sushi restaurants, we've perfected the art of sushi making.
+                Założona przez Mistrza Kuchni Hiroshi Tanaka, Sushi Strefa wnosi autentyczne japońskie tradycje na Twój stół. Z ponad 20-letnim doświadczeniem i szkoleniem w najbardziej prestiżowych restauracjach sushi w Tokio, udoskonaliliśmy sztukę przyrządzania sushi.
               </p>
               <p className="text-muted-foreground">
-                Every grain of rice is seasoned to perfection, every cut of fish is carefully selected, and every roll is crafted with the precision and respect that this ancient art demands.
+                Każde ziarnko ryżu jest przyprawione do perfekcji, każdy kawałek ryby jest starannie wybierany, a każda rolka jest wykonywana z precyzją i szacunkiem, jakich wymaga ta starożytna sztuka.
               </p>
               <Button className="hero-gradient hover:shadow-glow-primary" asChild>
                 <Link to="/about">
-                  Learn More About Us <ArrowRight className="ml-2 h-4 w-4" />
+                  Dowiedz Się Więcej O Nas <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
             <div className="relative">
               <img 
                 src={chefImage}
-                alt="Chef preparing sushi"
+                alt="Szef kuchni przygotowujący sushi"
                 className="rounded-lg shadow-lg w-full"
               />
               <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-border" />
@@ -192,14 +192,14 @@ export const Home = () => {
       <section className="py-20 hero-gradient">
         <div className="container text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Ready to Experience Authentic Sushi?
+            Gotowy na Doświadczenie Autentycznego Sushi?
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust SushiCraft for their sushi cravings.
+            Dołącz do tysięcy zadowolonych klientów, którzy ufają Sushi Strefa w zaspokajaniu swoich sushi-owych pragnień.
           </p>
           <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6" asChild>
             <Link to="/categories">
-              Start Your Order <ArrowRight className="ml-2 h-5 w-5" />
+              Rozpocznij Zamówienie <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>

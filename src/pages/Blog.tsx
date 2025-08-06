@@ -12,53 +12,53 @@ export const Blog = () => {
   const blogPosts = [
     {
       id: "1",
-      title: "The Art of Nigiri: Mastering the Perfect Balance",
-      excerpt: "Discover the centuries-old techniques behind crafting the perfect nigiri, from rice preparation to fish selection.",
+      title: "Sztuka Nigiri: Opanowanie Idealnej Równowagi",
+      excerpt: "Odkryj wielowiekowe techniki stojące za tworzeniem idealnego nigiri, od przygotowania ryżu po wybór ryby.",
       image: nigiriImage,
-      category: "Techniques",
-      readTime: "5 min read",
-      publishDate: "March 15, 2024",
+      category: "Techniki",
+      readTime: "5 min czytania",
+      publishDate: "15 marca 2024",
       featured: true,
     },
     {
       id: "2",
-      title: "Sustainable Sourcing: Our Commitment to Ocean Health",
-      excerpt: "Learn about our partnerships with sustainable fisheries and how we're helping protect marine ecosystems.",
+      title: "Zrównoważone Pozyskiwanie: Nasze Zobowiązanie wobec Zdrowia Oceanów",
+      excerpt: "Dowiedz się o naszych partnerstwach ze zrównoważonymi łowiskami i jak pomagamy chronić ekosystemy morskie.",
       image: heroImage,
-      category: "Sustainability",
-      readTime: "7 min read",
-      publishDate: "March 10, 2024",
+      category: "Zrównoważoność",
+      readTime: "7 min czytania",
+      publishDate: "10 marca 2024",
     },
     {
       id: "3",
-      title: "The History of Sushi: From Street Food to Fine Dining",
-      excerpt: "Explore the fascinating evolution of sushi from humble beginnings in Edo-period Japan to today's culinary art form.",
+      title: "Historia Sushi: Od Jedzenia Ulicznego do Wykwintnej Kuchni",
+      excerpt: "Poznaj fascynującą ewolucję sushi od skromnych początków w okresie Edo w Japonii do dzisiejszej sztuki kulinarnej.",
       image: chefImage,
-      category: "History",
-      readTime: "8 min read",
-      publishDate: "March 5, 2024",
+      category: "Historia",
+      readTime: "8 min czytania",
+      publishDate: "5 marca 2024",
     },
     {
       id: "4",
-      title: "Sake Pairing Guide: Enhancing Your Sushi Experience",
-      excerpt: "Master the art of pairing different types of sake with various sushi to elevate your dining experience.",
+      title: "Przewodnik po Parowaniu z Sake: Wzbogacenie Doświadczenia Sushi",
+      excerpt: "Opanuj sztukę parowania różnych rodzajów sake z różnorodnymi sushi, aby podnieść swoje doznania kulinarne.",
       image: makiImage,
-      category: "Pairing",
-      readTime: "6 min read",
-      publishDate: "February 28, 2024",
+      category: "Parowanie",
+      readTime: "6 min czytania",
+      publishDate: "28 lutego 2024",
     },
     {
       id: "5",
-      title: "Behind the Scenes: A Day in Our Kitchen",
-      excerpt: "Get an exclusive look at our daily preparation process and meet the dedicated team behind every perfect piece.",
+      title: "Kulisy: Dzień w Naszej Kuchni",
+      excerpt: "Uzyskaj ekskluzywny wgląd w nasz codzienny proces przygotowywania i poznaj oddany zespół stojący za każdym idealnym kawałkiem.",
       image: chefImage,
-      category: "Behind the Scenes",
-      readTime: "4 min read",
-      publishDate: "February 20, 2024",
+      category: "Kulisy",
+      readTime: "4 min czytania",
+      publishDate: "20 lutego 2024",
     },
   ];
 
-  const categories = ["All", "Techniques", "History", "Sustainability", "Pairing", "Behind the Scenes"];
+  const categories = ["Wszystkie", "Techniki", "Historia", "Zrównoważoność", "Parowanie", "Kulisy"];
 
   return (
     <div className="min-h-screen pt-20">
@@ -66,10 +66,10 @@ export const Blog = () => {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-            Sushi Stories & Insights
+            Historie i Wglądy w Sushi
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Dive deep into the world of sushi with expert tips, stories, and culinary wisdom from our master chefs.
+            Zanurz się głęboko w świat sushi z profesjonalnymi wskazówkami, historiami i kulinarną mądrością od naszych mistrzów kuchni.
           </p>
         </div>
 
@@ -78,9 +78,9 @@ export const Blog = () => {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={category === "All" ? "default" : "outline"}
+              variant={category === "Wszystkie" ? "default" : "outline"}
               size="sm"
-              className={category === "All" ? "hero-gradient" : ""}
+              className={category === "Wszystkie" ? "hero-gradient" : ""}
             >
               {category}
             </Button>
@@ -98,7 +98,7 @@ export const Blog = () => {
                   className="w-full h-full object-cover"
                 />
                 <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
-                  Featured
+                  Polecane
                 </Badge>
               </div>
               <div className="p-8 flex flex-col justify-center">
@@ -122,7 +122,7 @@ export const Blog = () => {
                   </p>
                   <Button className="hero-gradient hover:shadow-glow-primary w-fit" asChild>
                     <Link to={`/blog/${blogPosts[0].id}`}>
-                      Read Full Article <ArrowRight className="ml-2 h-4 w-4" />
+                      Czytaj Pełny Artykuł <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
@@ -165,7 +165,7 @@ export const Blog = () => {
                   </div>
                   <Button variant="ghost" size="sm" className="text-primary hover:text-primary" asChild>
                     <Link to={`/blog/${post.id}`}>
-                      Read More <ArrowRight className="ml-1 h-3 w-3" />
+                      Czytaj Więcej <ArrowRight className="ml-1 h-3 w-3" />
                     </Link>
                   </Button>
                 </div>
@@ -178,19 +178,19 @@ export const Blog = () => {
         <Card className="mt-16 hero-gradient">
           <CardContent className="p-12 text-center space-y-6">
             <h2 className="text-3xl font-bold text-white">
-              Stay Updated with Sushi Insights
+              Bądź na Bieżąco z Wglądami w Sushi
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest articles, recipes, and culinary tips from our master chefs.
+              Zapisz się do naszego newslettera, aby otrzymywać najnowsze artykuły, przepisy i kulinarne wskazówki od naszych mistrzów kuchni.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input 
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Wprowadź swój email"
                 className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
               />
               <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
-                Subscribe
+                Zapisz się
               </Button>
             </div>
           </CardContent>

@@ -24,25 +24,25 @@ export const Cart = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([
     {
       id: "1",
-      name: "Premium Nigiri Set",
-      description: "A carefully curated selection of our finest nigiri",
+      name: "Zestaw Premium Nigiri",
+      description: "Starannie dobrana selekcja naszych najlepszych nigiri",
       price: 24.99,
       image: nigiriImage,
       quantity: 2,
     },
     {
       id: "2",
-      name: "Signature Maki Collection",
-      description: "An assortment of our most popular maki rolls",
+      name: "Kolekcja Signature Maki",
+      description: "Asortyment naszych najpopularniejszych rolek maki",
       price: 32.99,
       image: makiImage,
       quantity: 1,
-      customizations: ["Extra wasabi", "No pickled ginger"],
+      customizations: ["Dodatkowe wasabi", "Bez marynowanego imbiru"],
     },
     {
       id: "3",
-      name: "Chef's Special Platter",
-      description: "Our master chef's daily selection",
+      name: "Specjalny Talerz Szefa Kuchni",
+      description: "Codzienna selekcja naszego mistrza kuchni",
       price: 45.99,
       image: heroImage,
       quantity: 1,
@@ -77,7 +77,7 @@ export const Cart = () => {
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const discount = isPromoApplied ? subtotal * 0.1 : 0;
   const tax = (subtotal - discount) * 0.08;
-  const delivery = subtotal > 50 ? 0 : 3.99;
+  const delivery = subtotal > 50 ? 0 : 9.99;
   const total = subtotal - discount + tax + delivery;
 
   if (cartItems.length === 0) {
@@ -88,14 +88,14 @@ export const Cart = () => {
             <ShoppingBag className="h-12 w-12 text-muted-foreground" />
           </div>
           <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-foreground">Your Cart is Empty</h1>
+            <h1 className="text-2xl font-bold text-foreground">Twój Koszyk Jest Pusty</h1>
             <p className="text-muted-foreground">
-              Looks like you haven't added any sushi to your cart yet.
+              Wygląda na to, że nie dodałeś jeszcze żadnego sushi do koszyka.
             </p>
           </div>
           <Button className="hero-gradient hover:shadow-glow-primary" asChild>
             <Link to="/categories">
-              Browse Our Menu <ArrowRight className="ml-2 h-4 w-4" />
+              Przeglądaj Nasze Menu <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
@@ -107,9 +107,9 @@ export const Cart = () => {
     <div className="min-h-screen pt-20">
       <div className="container py-8">
         <div className="space-y-6 mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground">Shopping Cart</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground">Koszyk Zakupów</h1>
           <p className="text-muted-foreground">
-            Review your order and proceed to checkout when ready.
+            Sprawdź swoje zamówienie i przejdź do kasy, gdy będziesz gotowy.
           </p>
         </div>
 
@@ -168,7 +168,7 @@ export const Cart = () => {
 
                         <div className="flex items-center space-x-4">
                           <span className="text-lg font-bold text-foreground">
-                            ${(item.price * item.quantity).toFixed(2)}
+                            {(item.price * item.quantity).toFixed(2)} zł
                           </span>
                           <Button
                             variant="ghost"
@@ -192,12 +192,12 @@ export const Cart = () => {
             {/* Promo Code */}
             <Card className="border-border bg-card">
               <CardHeader>
-                <CardTitle className="text-lg">Promo Code</CardTitle>
+                <CardTitle className="text-lg">Kod Promocyjny</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex space-x-2">
                   <Input 
-                    placeholder="Enter promo code"
+                    placeholder="Wprowadź kod promocyjny"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
                     disabled={isPromoApplied}
@@ -207,17 +207,17 @@ export const Cart = () => {
                     onClick={applyPromoCode}
                     disabled={isPromoApplied || !promoCode}
                   >
-                    Apply
+                    Zastosuj
                   </Button>
                 </div>
                 {isPromoApplied && (
                   <div className="flex items-center space-x-2">
-                    <Badge className="bg-green-500 text-white">Applied</Badge>
-                    <span className="text-sm text-green-600">SUSHI10 - 10% off</span>
+                    <Badge className="bg-green-500 text-white">Zastosowano</Badge>
+                    <span className="text-sm text-green-600">SUSHI10 - 10% zniżki</span>
                   </div>
                 )}
                 <p className="text-xs text-muted-foreground">
-                  Try code "SUSHI10" for 10% off your order
+                  Spróbuj kodu "SUSHI10" na 10% zniżki na zamówienie
                 </p>
               </CardContent>
             </Card>
@@ -225,37 +225,37 @@ export const Cart = () => {
             {/* Order Summary */}
             <Card className="border-border bg-card">
               <CardHeader>
-                <CardTitle className="text-lg">Order Summary</CardTitle>
+                <CardTitle className="text-lg">Podsumowanie Zamówienia</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Subtotal</span>
-                    <span className="text-foreground">${subtotal.toFixed(2)}</span>
+                    <span className="text-muted-foreground">Suma częściowa</span>
+                    <span className="text-foreground">{subtotal.toFixed(2)} zł</span>
                   </div>
                   
                   {isPromoApplied && (
                     <div className="flex justify-between text-sm">
-                      <span className="text-green-600">Discount (10%)</span>
-                      <span className="text-green-600">-${discount.toFixed(2)}</span>
+                      <span className="text-green-600">Zniżka (10%)</span>
+                      <span className="text-green-600">-{discount.toFixed(2)} zł</span>
                     </div>
                   )}
                   
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Tax</span>
-                    <span className="text-foreground">${tax.toFixed(2)}</span>
+                    <span className="text-muted-foreground">Podatek</span>
+                    <span className="text-foreground">{tax.toFixed(2)} zł</span>
                   </div>
                   
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Delivery</span>
+                    <span className="text-muted-foreground">Dostawa</span>
                     <span className="text-foreground">
-                      {delivery === 0 ? "FREE" : `$${delivery.toFixed(2)}`}
+                      {delivery === 0 ? "GRATIS" : `${delivery.toFixed(2)} zł`}
                     </span>
                   </div>
                   
                   {delivery === 0 && (
                     <p className="text-xs text-green-600">
-                      Free delivery on orders over $50!
+                      Darmowa dostawa przy zamówieniach powyżej 50 zł!
                     </p>
                   )}
                 </div>
@@ -263,17 +263,17 @@ export const Cart = () => {
                 <Separator />
 
                 <div className="flex justify-between text-lg font-bold">
-                  <span className="text-foreground">Total</span>
-                  <span className="text-foreground">${total.toFixed(2)}</span>
+                  <span className="text-foreground">Razem</span>
+                  <span className="text-foreground">{total.toFixed(2)} zł</span>
                 </div>
 
                 <Button className="w-full hero-gradient hover:shadow-glow-primary">
-                  Proceed to Checkout <ArrowRight className="ml-2 h-4 w-4" />
+                  Przejdź do Kasy <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
 
                 <Button variant="outline" className="w-full" asChild>
                   <Link to="/categories">
-                    Continue Shopping
+                    Kontynuuj Zakupy
                   </Link>
                 </Button>
               </CardContent>
@@ -282,21 +282,21 @@ export const Cart = () => {
             {/* Delivery Info */}
             <Card className="border-border bg-card">
               <CardHeader>
-                <CardTitle className="text-lg">Delivery Information</CardTitle>
+                <CardTitle className="text-lg">Informacje o Dostawie</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="text-sm space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Estimated delivery:</span>
-                    <span className="text-foreground">25-35 minutes</span>
+                    <span className="text-muted-foreground">Szacowana dostawa:</span>
+                    <span className="text-foreground">25-35 minut</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Delivery area:</span>
-                    <span className="text-foreground">Within 10 miles</span>
+                    <span className="text-muted-foreground">Obszar dostawy:</span>
+                    <span className="text-foreground">W promieniu 15 km</span>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  All sushi is prepared fresh to order and carefully packaged to maintain quality during delivery.
+                  Wszystkie sushi są przygotowywane na świeżo na zamówienie i starannie pakowane, aby zachować jakość podczas dostawy.
                 </p>
               </CardContent>
             </Card>

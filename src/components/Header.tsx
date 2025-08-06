@@ -22,10 +22,11 @@ export const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <div className="w-8 h-8 hero-gradient rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-sm">S</span>
-          </div>
-          <span className="text-xl font-bold">SushiCraft</span>
+          <img 
+            src="/lovable-uploads/dc9a329e-cc15-42cf-9600-adde96ea9889.png" 
+            alt="Sushi Strefa Logo" 
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -34,13 +35,13 @@ export const Header = () => {
             Menu
           </Link>
           <Link to="/about" className="text-foreground hover:text-primary transition-colors">
-            About
+            O nas
           </Link>
           <Link to="/blog" className="text-foreground hover:text-primary transition-colors">
             Blog
           </Link>
           <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
-            Contact
+            Kontakt
           </Link>
         </nav>
 
@@ -49,7 +50,7 @@ export const Header = () => {
           <div className="relative w-full">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input 
-              placeholder="Search sushi..." 
+              placeholder="Szukaj sushi..." 
               className="pl-10 bg-muted border-border"
             />
           </div>
@@ -113,13 +114,13 @@ export const Header = () => {
                   Menu
                 </Link>
                 <Link to="/about" className="text-lg font-medium hover:text-primary transition-colors">
-                  About
+                  O nas
                 </Link>
                 <Link to="/blog" className="text-lg font-medium hover:text-primary transition-colors">
                   Blog
                 </Link>
                 <Link to="/contact" className="text-lg font-medium hover:text-primary transition-colors">
-                  Contact
+                  Kontakt
                 </Link>
                 
                 <div className="pt-4 border-t border-border">
@@ -150,7 +151,7 @@ export const Header = () => {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input 
-              placeholder="Search sushi..." 
+              placeholder="Szukaj sushi..." 
               className="pl-10 bg-muted border-border"
             />
           </div>

@@ -17,19 +17,21 @@ export const Login = () => {
       <div className="container max-w-md py-8">
         <Card className="border-border bg-card">
           <CardHeader className="text-center space-y-4">
-            <div className="w-16 h-16 hero-gradient rounded-full mx-auto flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
-            <CardTitle className="text-2xl">Welcome to SushiCraft</CardTitle>
+            <img 
+              src="/lovable-uploads/dc9a329e-cc15-42cf-9600-adde96ea9889.png" 
+              alt="Sushi Strefa Logo" 
+              className="h-16 w-auto mx-auto"
+            />
+            <CardTitle className="text-2xl">Witamy w Sushi Strefa</CardTitle>
             <p className="text-muted-foreground">
-              Sign in to your account or create a new one
+              Zaloguj się na swoje konto lub utwórz nowe
             </p>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="login" className="space-y-6">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="login">Sign In</TabsTrigger>
-                <TabsTrigger value="register">Sign Up</TabsTrigger>
+                <TabsTrigger value="login">Zaloguj się</TabsTrigger>
+                <TabsTrigger value="register">Zarejestruj się</TabsTrigger>
               </TabsList>
 
               {/* Login Tab */}
@@ -37,14 +39,14 @@ export const Login = () => {
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium text-foreground">
-                      Email Address
+                      Adres Email
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                       <Input 
                         id="email" 
                         type="email" 
-                        placeholder="Enter your email"
+                        placeholder="Wprowadź swój email"
                         className="pl-10"
                       />
                     </div>
@@ -52,14 +54,14 @@ export const Login = () => {
 
                   <div className="space-y-2">
                     <label htmlFor="password" className="text-sm font-medium text-foreground">
-                      Password
+                      Hasło
                     </label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                       <Input 
                         id="password" 
                         type={showPassword ? "text" : "password"} 
-                        placeholder="Enter your password"
+                        placeholder="Wprowadź swoje hasło"
                         className="pl-10 pr-10"
                       />
                       <Button
@@ -86,17 +88,17 @@ export const Login = () => {
                         onCheckedChange={(checked) => setRememberMe(checked as boolean)}
                       />
                       <label htmlFor="remember" className="text-sm text-muted-foreground">
-                        Remember me
+                        Zapamiętaj mnie
                       </label>
                     </div>
                     <Link to="/forgot-password" className="text-sm text-primary hover:underline">
-                      Forgot password?
+                      Zapomniałeś hasła?
                     </Link>
                   </div>
                 </div>
 
                 <Button className="w-full hero-gradient hover:shadow-glow-primary">
-                  Sign In
+                  Zaloguj się
                 </Button>
 
                 <div className="relative">
@@ -104,7 +106,7 @@ export const Login = () => {
                     <div className="w-full border-t border-border" />
                   </div>
                   <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
+                    <span className="bg-card px-2 text-muted-foreground">Lub kontynuuj z</span>
                   </div>
                 </div>
 
@@ -145,26 +147,26 @@ export const Login = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="firstName" className="text-sm font-medium text-foreground">
-                        First Name
+                        Imię
                       </label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                         <Input 
                           id="firstName" 
-                          placeholder="John"
+                          placeholder="Jan"
                           className="pl-10"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="lastName" className="text-sm font-medium text-foreground">
-                        Last Name
+                        Nazwisko
                       </label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                         <Input 
                           id="lastName" 
-                          placeholder="Doe"
+                          placeholder="Kowalski"
                           className="pl-10"
                         />
                       </div>
@@ -173,14 +175,14 @@ export const Login = () => {
 
                   <div className="space-y-2">
                     <label htmlFor="registerEmail" className="text-sm font-medium text-foreground">
-                      Email Address
+                      Adres Email
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                       <Input 
                         id="registerEmail" 
                         type="email" 
-                        placeholder="john@example.com"
+                        placeholder="jan@example.com"
                         className="pl-10"
                       />
                     </div>
@@ -188,14 +190,14 @@ export const Login = () => {
 
                   <div className="space-y-2">
                     <label htmlFor="phone" className="text-sm font-medium text-foreground">
-                      Phone Number
+                      Numer Telefonu
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                       <Input 
                         id="phone" 
                         type="tel" 
-                        placeholder="(555) 123-4567"
+                        placeholder="+48 123 456 789"
                         className="pl-10"
                       />
                     </div>
@@ -203,14 +205,14 @@ export const Login = () => {
 
                   <div className="space-y-2">
                     <label htmlFor="registerPassword" className="text-sm font-medium text-foreground">
-                      Password
+                      Hasło
                     </label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                       <Input 
                         id="registerPassword" 
                         type={showPassword ? "text" : "password"} 
-                        placeholder="Create a password"
+                        placeholder="Utwórz hasło"
                         className="pl-10 pr-10"
                       />
                       <Button
@@ -231,14 +233,14 @@ export const Login = () => {
 
                   <div className="space-y-2">
                     <label htmlFor="confirmPassword" className="text-sm font-medium text-foreground">
-                      Confirm Password
+                      Potwierdź Hasło
                     </label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                       <Input 
                         id="confirmPassword" 
                         type={showConfirmPassword ? "text" : "password"} 
-                        placeholder="Confirm your password"
+                        placeholder="Potwierdź swoje hasło"
                         className="pl-10 pr-10"
                       />
                       <Button
@@ -260,20 +262,20 @@ export const Login = () => {
                   <div className="flex items-center space-x-2">
                     <Checkbox id="terms" />
                     <label htmlFor="terms" className="text-sm text-muted-foreground">
-                      I agree to the{" "}
+                      Zgadzam się z{" "}
                       <Link to="/terms" className="text-primary hover:underline">
-                        Terms of Service
+                        Warunkami Świadczenia Usług
                       </Link>{" "}
-                      and{" "}
+                      i{" "}
                       <Link to="/privacy" className="text-primary hover:underline">
-                        Privacy Policy
+                        Polityką Prywatności
                       </Link>
                     </label>
                   </div>
                 </div>
 
                 <Button className="w-full hero-gradient hover:shadow-glow-primary">
-                  Create Account
+                  Utwórz Konto
                 </Button>
               </TabsContent>
             </Tabs>
@@ -281,7 +283,7 @@ export const Login = () => {
         </Card>
 
         <p className="text-center text-sm text-muted-foreground mt-6">
-          By continuing, you agree to our terms and privacy policy
+          Kontynuując, zgadzasz się z naszymi warunkami i polityką prywatności
         </p>
       </div>
     </div>

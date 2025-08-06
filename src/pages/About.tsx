@@ -8,33 +8,33 @@ export const About = () => {
   const values = [
     {
       icon: Award,
-      title: "Excellence",
-      description: "We never compromise on quality, sourcing only the finest ingredients and maintaining the highest standards."
+      title: "Doskonałość",
+      description: "Nigdy nie idziemy na kompromis w kwestii jakości, pozyskując tylko najlepsze składniki i utrzymując najwyższe standardy."
     },
     {
       icon: Clock,
-      title: "Tradition",
-      description: "Honoring centuries-old Japanese sushi-making traditions while embracing modern culinary innovations."
+      title: "Tradycja",
+      description: "Szanujemy wielowiekowe japońskie tradycje przygotowywania sushi, jednocześnie przyjmując nowoczesne innowacje kulinarne."
     },
     {
       icon: Users,
-      title: "Community",
-      description: "Building lasting relationships with our customers, suppliers, and the local community we serve."
+      title: "Społeczność",
+      description: "Budujemy trwałe relacje z naszymi klientami, dostawcami i lokalną społecznością, której służymy."
     },
     {
       icon: Heart,
-      title: "Passion",
-      description: "Every piece of sushi is crafted with love, dedication, and genuine passion for the culinary arts."
+      title: "Pasja",
+      description: "Każdy kawałek sushi jest przygotowywany z miłością, poświęceniem i prawdziwą pasją do sztuki kulinarnej."
     }
   ];
 
   const achievements = [
-    "20+ Years of Experience",
-    "5-Star Customer Rating",
-    "Tokyo-Trained Chefs",
-    "Sustainable Sourcing",
-    "Award-Winning Restaurant",
-    "Fresh Daily Preparation"
+    "20+ Lat Doświadczenia",
+    "Ocena 5 Gwiazdek",
+    "Kucharze Szkoleni w Tokio",
+    "Zrównoważone Pozyskiwanie",
+    "Nagradzana Restauracja",
+    "Codzienne Świeże Przygotowanie"
   ];
 
   return (
@@ -44,24 +44,24 @@ export const About = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Badge className="bg-primary text-primary-foreground w-fit">Our Story</Badge>
+              <Badge className="bg-primary text-primary-foreground w-fit">Nasza Historia</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-                A Journey of
+                Podróż
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block">
-                  Culinary Mastery
+                  Kulinarnego Mistrzostwa
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Founded in 2004 by Master Chef Hiroshi Tanaka, SushiCraft represents the perfect fusion of traditional Japanese craftsmanship and modern culinary innovation. Our journey began with a simple mission: to bring authentic, high-quality sushi to food lovers who appreciate the art of exceptional cuisine.
+                Założona w 2004 roku przez Mistrza Kuchni Hiroshi Tanaka, Sushi Strefa reprezentuje idealne połączenie tradycyjnego japońskiego rzemiosła z nowoczesnymi innowacjami kulinarnymi. Nasza podróż rozpoczęła się od prostej misji: przynieść autentyczne, wysokiej jakości sushi miłośnikom jedzenia, którzy doceniają sztukę wyjątkowej kuchni.
               </p>
               <p className="text-muted-foreground">
-                Every day, we honor the centuries-old traditions of sushi making while continuously pushing the boundaries of flavor and presentation.
+                Każdego dnia szanujemy wielowiekowe tradycje przygotowywania sushi, jednocześnie stale przekraczając granice smaku i prezentacji.
               </p>
             </div>
             <div className="relative">
               <img 
                 src={chefImage}
-                alt="Master Chef preparing sushi"
+                alt="Mistrz kuchni przygotowujący sushi"
                 className="rounded-lg shadow-xl w-full"
               />
               <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-border" />
@@ -75,10 +75,10 @@ export const About = () => {
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Our Core Values
+              Nasze Główne Wartości
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              These principles guide everything we do, from ingredient selection to customer service.
+              Te zasady kierują wszystkim, co robimy, od wyboru składników po obsługę klienta.
             </p>
           </div>
 
@@ -107,26 +107,26 @@ export const About = () => {
             <div className="relative order-2 lg:order-1">
               <img 
                 src={heroImage}
-                alt="Premium sushi selection"
+                alt="Premium selekcja sushi"
                 className="rounded-lg shadow-xl w-full"
               />
               <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-border" />
             </div>
             <div className="space-y-6 order-1 lg:order-2">
-              <Badge className="bg-accent text-accent-foreground w-fit">Master Chef</Badge>
+              <Badge className="bg-accent text-accent-foreground w-fit">Mistrz Kuchni</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Hiroshi Tanaka
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With over two decades of experience in the culinary world, Master Chef Hiroshi Tanaka trained under renowned sushi masters in Tokyo's prestigious Tsukiji district. His dedication to perfection and deep respect for traditional techniques have earned him recognition as one of the finest sushi chefs outside of Japan.
+                Z ponad dwudziestoletnim doświadczeniem w świecie kulinarnym, Mistrz Kuchni Hiroshi Tanaka szkolił się pod okiem renomowanych mistrzów sushi w prestiżowej dzielnicy Tsukiji w Tokio. Jego oddanie perfekcji i głęboki szacunek dla tradycyjnych technik przyniosły mu uznanie jako jednego z najlepszych szefów kuchni sushi poza Japonią.
               </p>
               <div className="space-y-3">
-                <h3 className="font-semibold text-foreground">Training & Experience:</h3>
+                <h3 className="font-semibold text-foreground">Szkolenie i Doświadczenie:</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• 5 years at Jiro's apprentice program in Tokyo</li>
-                  <li>• Certified by Japan Sushi Academy</li>
-                  <li>• Winner of International Sushi Competition 2018</li>
-                  <li>• Featured in Culinary Masters Magazine</li>
+                  <li>• 5 lat w programie uczniowskim u Jiro w Tokio</li>
+                  <li>• Certyfikat Japan Sushi Academy</li>
+                  <li>• Zwycięzca Międzynarodowego Konkursu Sushi 2018</li>
+                  <li>• Wyróżniony w Culinary Masters Magazine</li>
                 </ul>
               </div>
             </div>
@@ -139,10 +139,10 @@ export const About = () => {
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Our Achievements
+              Nasze Osiągnięcia
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Recognition that reflects our commitment to excellence and customer satisfaction.
+              Uznanie, które odzwierciedla nasze zaangażowanie w doskonałość i zadowolenie klientów.
             </p>
           </div>
 
@@ -162,13 +162,13 @@ export const About = () => {
       <section className="py-20 hero-gradient">
         <div className="container text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Our Mission
+            Nasza Misja
           </h2>
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            "To create extraordinary sushi experiences that honor Japanese traditions while delighting modern palates. We believe that great food brings people together, and every piece we craft is a bridge between cultures, generations, and hearts."
+            "Tworzyć niezwykłe doświadczenia sushi, które honorują japońskie tradycje, jednocześnie zachwycając nowoczesne podniebienia. Wierzymy, że dobre jedzenie łączy ludzi, a każdy kawałek, który tworzymy, jest mostem między kulturami, pokoleniami i sercami."
           </p>
           <p className="text-lg text-white/80 italic">
-            — Master Chef Hiroshi Tanaka
+            — Mistrz Kuchni Hiroshi Tanaka
           </p>
         </div>
       </section>

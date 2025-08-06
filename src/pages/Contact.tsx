@@ -11,10 +11,10 @@ export const Contact = () => {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-            Get In Touch
+            Skontaktuj Się z Nami
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions about our menu, want to place a special order, or just want to say hello? We'd love to hear from you.
+            Masz pytania dotyczące naszego menu, chcesz złożyć specjalne zamówienie, czy po prostu chcesz przywitać się? Chętnie Cię wysłuchamy.
           </p>
         </div>
 
@@ -23,62 +23,62 @@ export const Contact = () => {
           <div className="lg:col-span-2">
             <Card className="border-border bg-card">
               <CardHeader>
-                <CardTitle className="text-2xl">Send us a Message</CardTitle>
+                <CardTitle className="text-2xl">Wyślij nam wiadomość</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="firstName" className="text-sm font-medium text-foreground">
-                      First Name *
+                      Imię *
                     </label>
-                    <Input id="firstName" placeholder="Enter your first name" />
+                    <Input id="firstName" placeholder="Wprowadź swoje imię" />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="lastName" className="text-sm font-medium text-foreground">
-                      Last Name *
+                      Nazwisko *
                     </label>
-                    <Input id="lastName" placeholder="Enter your last name" />
+                    <Input id="lastName" placeholder="Wprowadź swoje nazwisko" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-foreground">
-                    Email Address *
+                    Adres Email *
                   </label>
-                  <Input id="email" type="email" placeholder="Enter your email" />
+                  <Input id="email" type="email" placeholder="Wprowadź swój email" />
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium text-foreground">
-                    Phone Number
+                    Numer Telefonu
                   </label>
-                  <Input id="phone" type="tel" placeholder="Enter your phone number" />
+                  <Input id="phone" type="tel" placeholder="Wprowadź swój numer telefonu" />
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium text-foreground">
-                    Subject *
+                    Temat *
                   </label>
-                  <Input id="subject" placeholder="What is this regarding?" />
+                  <Input id="subject" placeholder="Czego dotyczy wiadomość?" />
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium text-foreground">
-                    Message *
+                    Wiadomość *
                   </label>
                   <Textarea 
                     id="message" 
-                    placeholder="Tell us more about your inquiry..."
+                    placeholder="Opowiedz nam więcej o swoim zapytaniu..."
                     className="min-h-[120px]"
                   />
                 </div>
 
                 <Button className="w-full hero-gradient hover:shadow-glow-primary">
-                  Send Message
+                  Wyślij Wiadomość
                 </Button>
 
                 <p className="text-xs text-muted-foreground">
-                  * Required fields. We'll respond to your inquiry within 24 hours.
+                  * Pola wymagane. Odpowiemy na Twoje zapytanie w ciągu 24 godzin.
                 </p>
               </CardContent>
             </Card>
@@ -89,17 +89,17 @@ export const Contact = () => {
             {/* Contact Details */}
             <Card className="border-border bg-card">
               <CardHeader>
-                <CardTitle className="text-xl">Contact Information</CardTitle>
+                <CardTitle className="text-xl">Informacje Kontaktowe</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-primary mt-1" />
                   <div>
-                    <p className="font-medium text-foreground">Address</p>
+                    <p className="font-medium text-foreground">Adres</p>
                     <p className="text-sm text-muted-foreground">
-                      123 Sushi Street<br />
-                      Food District, FC 12345<br />
-                      United States
+                      ul. Sushi 123<br />
+                      Dzielnica Gastronomiczna, 12-345<br />
+                      Warszawa, Polska
                     </p>
                   </div>
                 </div>
@@ -107,9 +107,9 @@ export const Contact = () => {
                 <div className="flex items-start space-x-3">
                   <Phone className="h-5 w-5 text-primary mt-1" />
                   <div>
-                    <p className="font-medium text-foreground">Phone</p>
+                    <p className="font-medium text-foreground">Telefon</p>
                     <p className="text-sm text-muted-foreground">
-                      +1 (555) 123-4567
+                      +48 123 456 789
                     </p>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export const Contact = () => {
                   <div>
                     <p className="font-medium text-foreground">Email</p>
                     <p className="text-sm text-muted-foreground">
-                      hello@sushicraft.com
+                      kontakt@sushistrefa.pl
                     </p>
                   </div>
                 </div>
@@ -127,11 +127,11 @@ export const Contact = () => {
                 <div className="flex items-start space-x-3">
                   <Clock className="h-5 w-5 text-primary mt-1" />
                   <div>
-                    <p className="font-medium text-foreground">Hours</p>
+                    <p className="font-medium text-foreground">Godziny Otwarcia</p>
                     <div className="text-sm text-muted-foreground space-y-1">
-                      <p>Monday - Thursday: 11am - 9pm</p>
-                      <p>Friday - Saturday: 11am - 10pm</p>
-                      <p>Sunday: 12pm - 8pm</p>
+                      <p>Poniedziałek - Czwartek: 11:00 - 21:00</p>
+                      <p>Piątek - Sobota: 11:00 - 22:00</p>
+                      <p>Niedziela: 12:00 - 20:00</p>
                     </div>
                   </div>
                 </div>
@@ -141,11 +141,11 @@ export const Contact = () => {
             {/* Social Media */}
             <Card className="border-border bg-card">
               <CardHeader>
-                <CardTitle className="text-xl">Follow Us</CardTitle>
+                <CardTitle className="text-xl">Śledź Nas</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-sm text-muted-foreground">
-                  Stay connected with us on social media for the latest updates, behind-the-scenes content, and special offers.
+                  Pozostań z nami w kontakcie w mediach społecznościowych, aby być na bieżąco z najnowszymi aktualizacjami, kulisami i specjalnymi ofertami.
                 </p>
                 <div className="flex space-x-3">
                   <Button variant="outline" size="sm" asChild>
@@ -167,21 +167,21 @@ export const Contact = () => {
             {/* Quick Questions */}
             <Card className="border-border bg-card">
               <CardHeader>
-                <CardTitle className="text-xl">Quick Questions?</CardTitle>
+                <CardTitle className="text-xl">Szybkie Pytania?</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
                   <div>
-                    <p className="font-medium text-foreground text-sm">Catering & Large Orders</p>
-                    <p className="text-xs text-muted-foreground">Call us at least 24 hours in advance</p>
+                    <p className="font-medium text-foreground text-sm">Catering i Duże Zamówienia</p>
+                    <p className="text-xs text-muted-foreground">Zadzwoń do nas co najmniej 24 godziny wcześniej</p>
                   </div>
                   <div>
-                    <p className="font-medium text-foreground text-sm">Dietary Restrictions</p>
-                    <p className="text-xs text-muted-foreground">Let us know about allergies when ordering</p>
+                    <p className="font-medium text-foreground text-sm">Ograniczenia Dietetyczne</p>
+                    <p className="text-xs text-muted-foreground">Poinformuj nas o alergiach podczas zamawiania</p>
                   </div>
                   <div>
-                    <p className="font-medium text-foreground text-sm">Delivery Questions</p>
-                    <p className="text-xs text-muted-foreground">Available within 10 miles, $3.99 fee</p>
+                    <p className="font-medium text-foreground text-sm">Pytania o Dostawę</p>
+                    <p className="text-xs text-muted-foreground">Dostępna w promieniu 15 km, opłata 9,99 zł</p>
                   </div>
                 </div>
               </CardContent>
@@ -192,47 +192,47 @@ export const Contact = () => {
         {/* FAQ Section */}
         <Card className="mt-16 border-border bg-card">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Frequently Asked Questions</CardTitle>
+            <CardTitle className="text-2xl text-center">Często Zadawane Pytania</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">How fresh is your fish?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Jak świeże są Wasze ryby?</h3>
                   <p className="text-sm text-muted-foreground">
-                    We receive fresh fish deliveries daily from trusted suppliers. All seafood is prepared the same day it arrives.
+                    Otrzymujemy codziennie świeże dostawy ryb od zaufanych dostawców. Wszystkie owoce morza są przygotowywane tego samego dnia, w którym przybywają.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Do you offer vegetarian options?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Czy oferujecie opcje wegetariańskie?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Yes! We have a variety of vegetarian sushi including cucumber, avocado, and pickled vegetable rolls.
+                    Tak! Mamy różnorodne wegetariańskie sushi, w tym rolki z ogórkiem, awokado i marynowanymi warzywami.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Can I place orders for pickup?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Czy mogę złożyć zamówienie na odbiór?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Absolutely! You can place pickup orders online or by calling us directly. Average preparation time is 15-20 minutes.
+                    Oczywiście! Możesz złożyć zamówienie na odbiór online lub dzwoniąc do nas bezpośrednio. Średni czas przygotowania to 15-20 minut.
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Do you cater events?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Czy obsługujecie wydarzenia?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Yes, we offer catering services for events of all sizes. Contact us at least 24 hours in advance to discuss your needs.
+                    Tak, oferujemy usługi cateringowe dla wydarzeń każdej wielkości. Skontaktuj się z nami co najmniej 24 godziny wcześniej, aby omówić Twoje potrzeby.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">What payment methods do you accept?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Jakie metody płatności akceptujecie?</h3>
                   <p className="text-sm text-muted-foreground">
-                    We accept all major credit cards, PayPal, Apple Pay, and cash for pickup orders.
+                    Akceptujemy wszystkie główne karty kredytowe, PayPal, Apple Pay i gotówkę dla zamówień na odbiór.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">How do you ensure food safety?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Jak zapewniacie bezpieczeństwo żywności?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Our kitchen follows strict HACCP guidelines, and all staff are trained in food safety protocols. We maintain temperature logs and use only approved suppliers.
+                    Nasza kuchnia przestrzega ścisłych wytycznych HACCP, a wszyscy pracownicy są szkoleni w zakresie bezpieczeństwa żywności. Prowadzimy dzienniki temperatur i korzystamy tylko z zatwierdzonych dostawców.
                   </p>
                 </div>
               </div>

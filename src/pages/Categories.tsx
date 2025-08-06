@@ -15,28 +15,28 @@ export const Categories = () => {
   const categories = [
     {
       id: "all",
-      name: "All Items",
-      description: "Browse our complete selection",
+      name: "Wszystkie Pozycje",
+      description: "Przeglądaj naszą pełną selekcję",
       count: 24,
     },
     {
       id: "nigiri",
-      name: "Nigiri & Sashimi",
-      description: "Hand-pressed rice topped with fresh fish and premium seafood",
+      name: "Nigiri i Sashimi",
+      description: "Ręcznie formowany ryż z świeżą rybą i premium owocami morza",
       count: 8,
       image: nigiriImage,
     },
     {
       id: "maki",
-      name: "Maki Rolls",
-      description: "Traditional and signature rolls wrapped in nori seaweed",
+      name: "Rolki Maki",
+      description: "Tradycyjne i firmowe rolki zawinięte w nori",
       count: 12,
       image: makiImage,
     },
     {
       id: "sets",
-      name: "Premium Sets",
-      description: "Carefully curated combinations for the perfect sushi experience",
+      name: "Zestawy Premium",
+      description: "Starannie dobrane kombinacje dla idealnego doświadczenia sushi",
       count: 4,
       image: heroImage,
     },
@@ -45,8 +45,8 @@ export const Categories = () => {
   const products = [
     {
       id: "1",
-      name: "Salmon Nigiri",
-      description: "Fresh Atlantic salmon over seasoned sushi rice",
+      name: "Nigiri z Łososiem",
+      description: "Świeży atlantycki łosoś na przyprawionym ryżu sushi",
       price: 3.99,
       image: nigiriImage,
       rating: 4.8,
@@ -54,8 +54,8 @@ export const Categories = () => {
     },
     {
       id: "2",
-      name: "Tuna Sashimi",
-      description: "Premium bluefin tuna, expertly sliced",
+      name: "Sashimi z Tuńczyka",
+      description: "Premium błękitnopłetwy tuńczyk, ekspercko pokrojony",
       price: 5.99,
       image: nigiriImage,
       rating: 4.9,
@@ -64,8 +64,8 @@ export const Categories = () => {
     },
     {
       id: "3",
-      name: "California Roll",
-      description: "Crab, avocado, and cucumber wrapped in nori",
+      name: "Rolka California",
+      description: "Krab, awokado i ogórek zawinięte w nori",
       price: 8.99,
       image: makiImage,
       rating: 4.7,
@@ -73,8 +73,8 @@ export const Categories = () => {
     },
     {
       id: "4",
-      name: "Spicy Tuna Roll",
-      description: "Spicy tuna mix with cucumber and tempura flakes",
+      name: "Pikantna Rolka z Tuńczykiem",
+      description: "Pikantna mieszanka tuńczyka z ogórkiem i płatkami tempura",
       price: 9.99,
       image: makiImage,
       rating: 4.8,
@@ -83,8 +83,8 @@ export const Categories = () => {
     },
     {
       id: "5",
-      name: "Dragon Roll",
-      description: "Eel and cucumber topped with avocado and eel sauce",
+      name: "Rolka Smoka",
+      description: "Węgorz i ogórek przykryte awokado i sosem węgorzowym",
       price: 14.99,
       image: makiImage,
       rating: 4.9,
@@ -93,8 +93,8 @@ export const Categories = () => {
     },
     {
       id: "6",
-      name: "Omakase Set",
-      description: "Chef's choice of 12 pieces nigiri and 1 roll",
+      name: "Zestaw Omakase",
+      description: "Wybór szefa kuchni: 12 kawałków nigiri i 1 rolka",
       price: 45.99,
       originalPrice: 52.99,
       image: heroImage,
@@ -115,10 +115,10 @@ export const Categories = () => {
         <div className="space-y-6 mb-12">
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-              Our Sushi Menu
+              Nasze Menu Sushi
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover authentic flavors crafted with precision and passion
+              Odkryj autentyczne smaki stworzone z precyzją i pasją
             </p>
           </div>
         </div>
@@ -167,10 +167,10 @@ export const Categories = () => {
           <div className="flex items-center space-x-4">
             <Button variant="outline" size="sm">
               <Filter className="h-4 w-4 mr-2" />
-              Filter
+              Filtruj
             </Button>
             <span className="text-sm text-muted-foreground">
-              {filteredProducts.length} items found
+              Znaleziono {filteredProducts.length} pozycji
             </span>
           </div>
 
@@ -207,14 +207,14 @@ export const Categories = () => {
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
             <p className="text-lg text-muted-foreground">
-              No items found in this category.
+              Nie znaleziono pozycji w tej kategorii.
             </p>
             <Button 
               variant="outline" 
               className="mt-4"
               onClick={() => setSelectedCategory("all")}
             >
-              View All Items
+              Zobacz Wszystkie Pozycje
             </Button>
           </div>
         )}
