@@ -26,7 +26,7 @@ export const Cart = () => {
       id: "1",
       name: "Zestaw Premium Nigiri",
       description: "Starannie dobrana selekcja naszych najlepszych nigiri",
-      price: 24.99,
+      price: 89.99,
       image: nigiriImage,
       quantity: 2,
     },
@@ -34,7 +34,7 @@ export const Cart = () => {
       id: "2",
       name: "Kolekcja Signature Maki",
       description: "Asortyment naszych najpopularniejszych rolek maki",
-      price: 32.99,
+      price: 119.99,
       image: makiImage,
       quantity: 1,
       customizations: ["Dodatkowe wasabi", "Bez marynowanego imbiru"],
@@ -43,7 +43,7 @@ export const Cart = () => {
       id: "3",
       name: "Specjalny Talerz Szefa Kuchni",
       description: "Codzienna selekcja naszego mistrza kuchni",
-      price: 45.99,
+      price: 169.99,
       image: heroImage,
       quantity: 1,
     },
@@ -77,7 +77,7 @@ export const Cart = () => {
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const discount = isPromoApplied ? subtotal * 0.1 : 0;
   const tax = (subtotal - discount) * 0.08;
-  const delivery = subtotal > 50 ? 0 : 9.99;
+  const delivery = subtotal > 200 ? 0 : 39.99;
   const total = subtotal - discount + tax + delivery;
 
   if (cartItems.length === 0) {
@@ -254,9 +254,9 @@ export const Cart = () => {
                   </div>
                   
                   {delivery === 0 && (
-                    <p className="text-xs text-green-600">
-                      Darmowa dostawa przy zamówieniach powyżej 50 zł!
-                    </p>
+                     <p className="text-xs text-green-600">
+                       Darmowa dostawa przy zamówieniach powyżej 200 zł!
+                     </p>
                   )}
                 </div>
 
