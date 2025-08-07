@@ -128,8 +128,122 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Popular Categories */}
       <section className="py-20">
+        <div className="container">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Najpopularniejsze Kategorie
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Odkryj nasze najpopularniejsze kategorie sushi i wybierz swoje ulubione smaki.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            <Link to="/categories" className="group">
+              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
+                <CardContent className="p-6 space-y-3">
+                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Star className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">Zestawy</h3>
+                  <p className="text-sm text-muted-foreground">Kompletne zestawy sushi</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/categories" className="group">
+              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
+                <CardContent className="p-6 space-y-3">
+                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Clock className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">Zupy</h3>
+                  <p className="text-sm text-muted-foreground">Tradycyjne japońskie zupy</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/categories" className="group">
+              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
+                <CardContent className="p-6 space-y-3">
+                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Truck className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">Hosomaki</h3>
+                  <p className="text-sm text-muted-foreground">Cienkie rolki sushi</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/categories" className="group">
+              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
+                <CardContent className="p-6 space-y-3">
+                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <ArrowRight className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">Strefa Fusion</h3>
+                  <p className="text-sm text-muted-foreground">Nowoczesne kreacje</p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <Link to="/categories" className="group">
+              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
+                <CardContent className="p-6 space-y-3">
+                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Star className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">Nigiri</h3>
+                  <p className="text-sm text-muted-foreground">Klasyczne nigiri</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/categories" className="group">
+              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
+                <CardContent className="p-6 space-y-3">
+                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Clock className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">Sashimi</h3>
+                  <p className="text-sm text-muted-foreground">Świeże filety ryb</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/categories" className="group">
+              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
+                <CardContent className="p-6 space-y-3">
+                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Truck className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">Uramaki</h3>
+                  <p className="text-sm text-muted-foreground">Rolki na odwrót</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/categories" className="group">
+              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
+                <CardContent className="p-6 space-y-3">
+                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <ArrowRight className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-foreground">Napoje</h3>
+                  <p className="text-sm text-muted-foreground">Sake i inne napoje</p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="py-20 bg-card">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
