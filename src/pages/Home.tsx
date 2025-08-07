@@ -7,6 +7,14 @@ import heroImage from "@/assets/hero-sushi.jpg";
 import nigiriImage from "@/assets/nigiri-set.jpg";
 import makiImage from "@/assets/maki-collection.jpg";
 import chefImage from "@/assets/chef-preparing.jpg";
+import zestawyImage from "@/assets/category-zestawy.jpg";
+import zupyImage from "@/assets/category-zupy.jpg";
+import hosomakiImage from "@/assets/category-hosomaki.jpg";
+import fusionImage from "@/assets/category-fusion.jpg";
+import nigiriCategoryImage from "@/assets/category-nigiri.jpg";
+import sashimiImage from "@/assets/category-sashimi.jpg";
+import uramakiImage from "@/assets/category-uramaki.jpg";
+import napojeImage from "@/assets/category-napoje.jpg";
 
 export const Home = () => {
   const featuredProducts = [
@@ -142,101 +150,117 @@ export const Home = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <Link to="/categories" className="group">
-              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Star className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">Zestawy</h3>
-                  <p className="text-sm text-muted-foreground">Kompletne zestawy sushi</p>
-                </CardContent>
-              </Card>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden border border-border hover:border-primary transition-colors">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                  style={{ backgroundImage: `url(${zestawyImage})` }}
+                />
+                <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-colors" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Zestawy</h3>
+                  <p className="text-xs text-muted-foreground">Kompletne zestawy sushi</p>
+                </div>
+              </div>
             </Link>
 
             <Link to="/categories" className="group">
-              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">Zupy</h3>
-                  <p className="text-sm text-muted-foreground">Tradycyjne japońskie zupy</p>
-                </CardContent>
-              </Card>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden border border-border hover:border-primary transition-colors">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                  style={{ backgroundImage: `url(${zupyImage})` }}
+                />
+                <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-colors" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Zupy</h3>
+                  <p className="text-xs text-muted-foreground">Tradycyjne japońskie zupy</p>
+                </div>
+              </div>
             </Link>
 
             <Link to="/categories" className="group">
-              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Truck className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">Hosomaki</h3>
-                  <p className="text-sm text-muted-foreground">Cienkie rolki sushi</p>
-                </CardContent>
-              </Card>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden border border-border hover:border-primary transition-colors">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                  style={{ backgroundImage: `url(${hosomakiImage})` }}
+                />
+                <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-colors" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Hosomaki</h3>
+                  <p className="text-xs text-muted-foreground">Cienkie rolki sushi</p>
+                </div>
+              </div>
             </Link>
 
             <Link to="/categories" className="group">
-              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <ArrowRight className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">Strefa Fusion</h3>
-                  <p className="text-sm text-muted-foreground">Nowoczesne kreacje</p>
-                </CardContent>
-              </Card>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden border border-border hover:border-primary transition-colors">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                  style={{ backgroundImage: `url(${fusionImage})` }}
+                />
+                <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-colors" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Strefa Fusion</h3>
+                  <p className="text-xs text-muted-foreground">Nowoczesne kreacje</p>
+                </div>
+              </div>
             </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <Link to="/categories" className="group">
-              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Star className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">Nigiri</h3>
-                  <p className="text-sm text-muted-foreground">Klasyczne nigiri</p>
-                </CardContent>
-              </Card>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden border border-border hover:border-primary transition-colors">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                  style={{ backgroundImage: `url(${nigiriCategoryImage})` }}
+                />
+                <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-colors" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Nigiri</h3>
+                  <p className="text-xs text-muted-foreground">Klasyczne nigiri</p>
+                </div>
+              </div>
             </Link>
 
             <Link to="/categories" className="group">
-              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">Sashimi</h3>
-                  <p className="text-sm text-muted-foreground">Świeże filety ryb</p>
-                </CardContent>
-              </Card>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden border border-border hover:border-primary transition-colors">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                  style={{ backgroundImage: `url(${sashimiImage})` }}
+                />
+                <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-colors" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Sashimi</h3>
+                  <p className="text-xs text-muted-foreground">Świeże filety ryb</p>
+                </div>
+              </div>
             </Link>
 
             <Link to="/categories" className="group">
-              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Truck className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">Uramaki</h3>
-                  <p className="text-sm text-muted-foreground">Rolki na odwrót</p>
-                </CardContent>
-              </Card>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden border border-border hover:border-primary transition-colors">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                  style={{ backgroundImage: `url(${uramakiImage})` }}
+                />
+                <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-colors" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Uramaki</h3>
+                  <p className="text-xs text-muted-foreground">Rolki na odwrót</p>
+                </div>
+              </div>
             </Link>
 
             <Link to="/categories" className="group">
-              <Card className="text-center border-border bg-background hover:border-primary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <div className="w-12 h-12 hero-gradient rounded-lg mx-auto flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <ArrowRight className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">Napoje</h3>
-                  <p className="text-sm text-muted-foreground">Sake i inne napoje</p>
-                </CardContent>
-              </Card>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden border border-border hover:border-primary transition-colors">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                  style={{ backgroundImage: `url(${napojeImage})` }}
+                />
+                <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-colors" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4">
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Napoje</h3>
+                  <p className="text-xs text-muted-foreground">Sake i inne napoje</p>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
