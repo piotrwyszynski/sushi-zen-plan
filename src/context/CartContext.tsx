@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 export interface CartItem {
@@ -27,46 +28,75 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [items, setItems] = useState<CartItem[]>(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? (JSON.parse(raw) as CartItem[]) : [];
-    } catch {
+      const parsed = raw ? (JSON.parse(raw) as CartItem[]) : [];
+      console.log("Załadowano koszyk z localStorage:", parsed);
+      return parsed;
+    } catch (error) {
+      console.error("Błąd podczas ładowania koszyka:", error);
       return [];
     }
   });
 
   useEffect(() => {
     try {
+      console.log("Zapisywanie koszyka do localStorage:", items);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-    } catch {}
+    } catch (error) {
+      console.error("Błąd podczas zapisywania koszyka:", error);
+    }
   }, [items]);
 
   const addItem: CartContextValue["addItem"] = (item, quantity = 1) => {
+    console.log("CartContext: Dodawanie produktu:", item, "ilość:", quantity);
     setItems((prev) => {
       const existing = prev.find((i) => i.id === item.id);
       if (existing) {
-        return prev.map((i) =>
+        console.log("Produkt już istnieje, zwiększam ilość");
+        const newItems = prev.map((i) =>
           i.id === item.id ? { ...i, quantity: i.quantity + quantity } : i
         );
+        console.log("Nowe items po zwiększeniu ilości:", newItems);
+        return newItems;
       }
-      return [...prev, { ...item, quantity }];
+      console.log("Nowy produkt, dodaję do koszyka");
+      const newItems = [...prev, { ...item, quantity }];
+      console.log("Nowe items po dodaniu:", newItems);
+      return newItems;
     });
   };
 
   const updateQuantity: CartContextValue["updateQuantity"] = (id, quantity) => {
+    console.log("CartContext: Aktualizacja ilości dla produktu:", id, "nowa ilość:", quantity);
     setItems((prev) => {
       if (quantity <= 0) {
+        console.log("Ilość <= 0, usuwam produkt");
         return prev.filter((i) => i.id !== id);
       }
-      return prev.map((i) => (i.id === id ? { ...i, quantity } : i));
+      const newItems = prev.map((i) => (i.id === id ? { ...i, quantity } : i));
+      console.log("Nowe items po aktualizacji ilości:", newItems);
+      return newItems;
     });
   };
 
   const removeItem: CartContextValue["removeItem"] = (id) => {
-    setItems((prev) => prev.filter((i) => i.id !== id));
+    console.log("CartContext: Usuwanie produktu:", id);
+    setItems((prev) => {
+      const newItems = prev.filter((i) => i.id !== id);
+      console.log("Nowe items po usunięciu:", newItems);
+      return newItems;
+    });
   };
 
-  const clear: CartContextValue["clear"] = () => setItems([]);
+  const clear: CartContextValue["clear"] = () => {
+    console.log("CartContext: Czyszczenie koszyka");
+    setItems([]);
+  };
 
-  const count = useMemo(() => items.reduce((sum, i) => sum + i.quantity, 0), [items]);
+  const count = useMemo(() => {
+    const totalCount = items.reduce((sum, i) => sum + i.quantity, 0);
+    console.log("Przeliczono ilość produktów w koszyku:", totalCount);
+    return totalCount;
+  }, [items]);
 
   const value = useMemo(
     () => ({ items, count, addItem, updateQuantity, removeItem, clear }),

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,31 +7,34 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import nigiriImage from "@/assets/nigiri-set.jpg";
-import makiImage from "@/assets/maki-collection.jpg";
-import heroImage from "@/assets/hero-sushi.jpg";
 import { useCart } from "@/context/CartContext";
-
-interface CartItem {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  quantity: number;
-  customizations?: string[];
-}
 
 export const Cart = () => {
   const { items: cartItems, updateQuantity, removeItem } = useCart();
-
   const [promoCode, setPromoCode] = useState("");
   const [isPromoApplied, setIsPromoApplied] = useState(false);
+
+  console.log("Cart: Obecne produkty w koszyku:", cartItems);
 
   const applyPromoCode = () => {
     if (promoCode.toLowerCase() === "sushi10") {
       setIsPromoApplied(true);
     }
+  };
+
+  const handleQuantityDecrease = (id: string, currentQuantity: number) => {
+    console.log("Zmniejszanie ilości dla produktu:", id, "obecna ilość:", currentQuantity);
+    updateQuantity(id, currentQuantity - 1);
+  };
+
+  const handleQuantityIncrease = (id: string, currentQuantity: number) => {
+    console.log("Zwiększanie ilości dla produktu:", id, "obecna ilość:", currentQuantity);
+    updateQuantity(id, currentQuantity + 1);
+  };
+
+  const handleRemoveItem = (id: string) => {
+    console.log("Usuwanie produktu z koszyka:", id);
+    removeItem(id);
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -107,7 +111,7 @@ export const Cart = () => {
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            onClick={() => handleQuantityDecrease(item.id, item.quantity)}
                             className="h-8 w-8 p-0"
                           >
                             <Minus className="h-4 w-4" />
@@ -118,7 +122,7 @@ export const Cart = () => {
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            onClick={() => handleQuantityIncrease(item.id, item.quantity)}
                             className="h-8 w-8 p-0"
                           >
                             <Plus className="h-4 w-4" />
@@ -132,7 +136,7 @@ export const Cart = () => {
                           <Button
                             variant="ghost"
                             size="sm"
-                            onClick={() => removeItem(item.id)}
+                            onClick={() => handleRemoveItem(item.id)}
                             className="text-destructive hover:text-destructive"
                           >
                             <Trash2 className="h-4 w-4" />

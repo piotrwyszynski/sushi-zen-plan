@@ -1,10 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Heart, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
-import { toast } from "@/components/ui/use-toast";
+import { toast } from "@/hooks/use-toast";
 
 interface ProductCardProps {
   id: string;
@@ -34,16 +35,25 @@ export const ProductCard = ({
   const { addItem } = useCart();
 
   const handleAddToCart = () => {
+    console.log("Dodawanie produktu do koszyka:", { id, name, price });
     setIsAdding(true);
-    addItem({ id, name, description, price, image }, 1);
-    toast({
-      title: "Dodano do koszyka",
-      description: `${name} został dodany do koszyka.`,
-    });
+    
+    try {
+      addItem({ id, name, description, price, image }, 1);
+      toast({
+        title: "Dodano do koszyka",
+        description: `${name} został dodany do koszyka.`,
+      });
+      console.log("Produkt dodany pomyślnie");
+    } catch (error) {
+      console.error("Błąd podczas dodawania produktu:", error);
+    }
+    
     setTimeout(() => {
       setIsAdding(false);
     }, 400);
   };
+
   return (
     <Card className="group overflow-hidden border-border bg-card hover:shadow-glow-primary transition-all duration-300">
       <div className="relative overflow-hidden">
