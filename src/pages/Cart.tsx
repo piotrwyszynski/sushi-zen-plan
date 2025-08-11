@@ -22,6 +22,11 @@ export const Cart = () => {
     }
   };
 
+  const removePromoCode = () => {
+    setIsPromoApplied(false);
+    setPromoCode("");
+  };
+
   const handleQuantityDecrease = (id: string, currentQuantity: number) => {
     console.log("Zmniejszanie ilości dla produktu:", id, "obecna ilość:", currentQuantity);
     updateQuantity(id, currentQuantity - 1);
@@ -174,9 +179,19 @@ export const Cart = () => {
                   </Button>
                 </div>
                 {isPromoApplied && (
-                  <div className="flex items-center space-x-2">
-                    <Badge className="bg-green-500 text-white">Zastosowano</Badge>
-                    <span className="text-sm text-green-600">SUSHI10 - 10% zniżki</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <Badge variant="secondary" className="bg-green-500 text-white">Zastosowano</Badge>
+                      <span className="text-sm text-green-600">SUSHI10 - 10% zniżki</span>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={removePromoCode}
+                      className="text-destructive hover:text-destructive"
+                    >
+                      Usuń kod
+                    </Button>
                   </div>
                 )}
                 <p className="text-xs text-muted-foreground">
@@ -230,8 +245,10 @@ export const Cart = () => {
                   <span className="text-foreground">{total.toFixed(2)} zł</span>
                 </div>
 
-                <Button className="w-full hero-gradient hover:shadow-glow-primary">
-                  Przejdź do Kasy <ArrowRight className="ml-2 h-4 w-4" />
+                <Button className="w-full hero-gradient hover:shadow-glow-primary" asChild>
+                  <Link to="/checkout">
+                    Przejdź do Kasy <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
 
                 <Button variant="outline" className="w-full" asChild>
