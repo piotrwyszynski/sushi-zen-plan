@@ -3,6 +3,8 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Heart, ShoppingCart } from "lucide-react";
 import { useState } from "react";
+import { useCart } from "@/context/CartContext";
+import { toast } from "@/components/ui/use-toast";
 
 interface ProductCardProps {
   id: string;
@@ -17,6 +19,7 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({
+  id,
   name,
   description,
   price,
@@ -28,15 +31,19 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
+  const { addItem } = useCart();
 
   const handleAddToCart = () => {
     setIsAdding(true);
-    // Simulate API call
+    addItem({ id, name, description, price, image }, 1);
+    toast({
+      title: "Dodano do koszyka",
+      description: `${name} został dodany do koszyka.`,
+    });
     setTimeout(() => {
       setIsAdding(false);
-    }, 1000);
+    }, 400);
   };
-
   return (
     <Card className="group overflow-hidden border-border bg-card hover:shadow-glow-primary transition-all duration-300">
       <div className="relative overflow-hidden">
@@ -98,11 +105,11 @@ export const ProductCard = ({
           {/* Price */}
           <div className="flex items-center space-x-2">
             <span className="text-lg font-bold text-foreground">
-              ${price.toFixed(2)}
+              {price.toFixed(2)} zł
             </span>
             {originalPrice && (
               <span className="text-sm text-muted-foreground line-through">
-                ${originalPrice.toFixed(2)}
+                {originalPrice.toFixed(2)} zł
               </span>
             )}
           </div>
@@ -116,7 +123,7 @@ export const ProductCard = ({
           className="w-full hero-gradient hover:shadow-glow-primary"
         >
           <ShoppingCart className="h-4 w-4 mr-2" />
-          {isAdding ? 'Adding...' : 'Add to Cart'}
+          {isAdding ? 'Dodawanie...' : 'Dodaj do koszyka'}
         </Button>
       </CardFooter>
     </Card>

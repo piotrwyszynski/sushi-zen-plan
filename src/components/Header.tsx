@@ -12,9 +12,10 @@ import {
   Instagram
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCart } from "@/context/CartContext";
 
 export const Header = () => {
-  const [cartCount] = useState(3);
+  const { count: cartCount } = useCart();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (

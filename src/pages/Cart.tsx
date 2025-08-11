@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import nigiriImage from "@/assets/nigiri-set.jpg";
 import makiImage from "@/assets/maki-collection.jpg";
 import heroImage from "@/assets/hero-sushi.jpg";
+import { useCart } from "@/context/CartContext";
 
 interface CartItem {
   id: string;
@@ -21,52 +22,10 @@ interface CartItem {
 }
 
 export const Cart = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: "1",
-      name: "Zestaw Premium Nigiri",
-      description: "Starannie dobrana selekcja naszych najlepszych nigiri",
-      price: 89.99,
-      image: nigiriImage,
-      quantity: 2,
-    },
-    {
-      id: "2",
-      name: "Kolekcja Signature Maki",
-      description: "Asortyment naszych najpopularniejszych rolek maki",
-      price: 119.99,
-      image: makiImage,
-      quantity: 1,
-      customizations: ["Dodatkowe wasabi", "Bez marynowanego imbiru"],
-    },
-    {
-      id: "3",
-      name: "Specjalny Talerz Szefa Kuchni",
-      description: "Codzienna selekcja naszego mistrza kuchni",
-      price: 169.99,
-      image: heroImage,
-      quantity: 1,
-    },
-  ]);
+  const { items: cartItems, updateQuantity, removeItem } = useCart();
 
   const [promoCode, setPromoCode] = useState("");
   const [isPromoApplied, setIsPromoApplied] = useState(false);
-
-  const updateQuantity = (id: string, newQuantity: number) => {
-    if (newQuantity === 0) {
-      removeItem(id);
-      return;
-    }
-    setCartItems(items =>
-      items.map(item =>
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
-
-  const removeItem = (id: string) => {
-    setCartItems(items => items.filter(item => item.id !== id));
-  };
 
   const applyPromoCode = () => {
     if (promoCode.toLowerCase() === "sushi10") {
