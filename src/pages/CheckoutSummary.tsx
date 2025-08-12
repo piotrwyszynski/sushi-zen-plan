@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/components/ui/use-toast";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export const CheckoutSummary = () => {
   const navigate = useNavigate();
@@ -35,6 +36,57 @@ export const CheckoutSummary = () => {
 
         <main className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <section className="lg:col-span-2 space-y-6">
+            <Card className="border-border bg-card">
+              <CardHeader>
+                <CardTitle className="text-lg">Zamówione pozycje</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm">
+                {items.length > 0 ? (
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Produkt</TableHead>
+                        <TableHead className="text-right">Cena</TableHead>
+                        <TableHead className="text-center">Ilość</TableHead>
+                        <TableHead className="text-right">Razem</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {items.map((item) => (
+                        <TableRow key={item.id}>
+                          <TableCell>
+                            <div className="flex items-center gap-3">
+                              <img
+                                src={item.image}
+                                alt={`Sushi ${item.name}`}
+                                loading="lazy"
+                                className="h-12 w-12 rounded object-cover"
+                              />
+                              <div>
+                                <p className="font-medium">{item.name}</p>
+                                {item.customizations && item.customizations.length > 0 && (
+                                  <p className="text-xs text-muted-foreground">
+                                    Opcje: {item.customizations.join(", ")}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          </TableCell>
+                          <TableCell className="text-right">{item.price.toFixed(2)} zł</TableCell>
+                          <TableCell className="text-center">x{item.quantity}</TableCell>
+                          <TableCell className="text-right font-medium">
+                            {(item.price * item.quantity).toFixed(2)} zł
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                ) : (
+                  <p className="text-muted-foreground">Koszyk jest pusty.</p>
+                )}
+              </CardContent>
+            </Card>
+
             <Card className="border-border bg-card">
               <CardHeader>
                 <CardTitle className="text-lg">Adres i kontakt</CardTitle>
