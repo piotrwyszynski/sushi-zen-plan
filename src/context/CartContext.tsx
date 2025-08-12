@@ -11,6 +11,21 @@ export interface CartItem {
   customizations?: string[];
 }
 
+interface AddressData {
+  fullName: string;
+  phone: string;
+  email: string;
+  street: string;
+  building: string;
+  apartment?: string;
+  city: string;
+  postalCode: string;
+  notes?: string;
+  deliveryMethod: "delivery" | "pickup";
+}
+
+type PaymentMethod = "payu" | "cod";
+
 interface CartContextValue {
   items: CartItem[];
   count: number;
@@ -18,11 +33,19 @@ interface CartContextValue {
   updateQuantity: (id: string, quantity: number) => void;
   removeItem: (id: string) => void;
   clear: () => void;
+  // Checkout data
+  address?: AddressData;
+  setAddress: (address: AddressData) => void;
+  paymentMethod?: PaymentMethod;
+  setPaymentMethod: (method: PaymentMethod) => void;
+  clearCheckout: () => void;
 }
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
 
 const STORAGE_KEY = "sushi_strefa_cart";
+const STORAGE_ADDRESS_KEY = "sushi_strefa_checkout_address";
+const STORAGE_PAYMENT_KEY = "sushi_strefa_checkout_payment";
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
@@ -45,6 +68,56 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       console.error("Błąd podczas zapisywania koszyka:", error);
     }
   }, [items]);
+
+  // Checkout: address and payment method persisted separately
+  const [address, setAddressState] = useState<AddressData | undefined>(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_ADDRESS_KEY);
+      return raw ? (JSON.parse(raw) as AddressData) : undefined;
+    } catch (e) {
+      console.error("Błąd podczas ładowania adresu z localStorage:", e);
+      return undefined;
+    }
+  });
+
+  const [paymentMethod, setPaymentMethodState] = useState<PaymentMethod | undefined>(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_PAYMENT_KEY);
+      return raw ? (JSON.parse(raw) as PaymentMethod) : undefined;
+    } catch (e) {
+      console.error("Błąd podczas ładowania metody płatności z localStorage:", e);
+      return undefined;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      if (address) localStorage.setItem(STORAGE_ADDRESS_KEY, JSON.stringify(address));
+      else localStorage.removeItem(STORAGE_ADDRESS_KEY);
+    } catch (e) {
+      console.error("Błąd podczas zapisywania adresu:", e);
+    }
+  }, [address]);
+
+  useEffect(() => {
+    try {
+      if (paymentMethod) localStorage.setItem(STORAGE_PAYMENT_KEY, JSON.stringify(paymentMethod));
+      else localStorage.removeItem(STORAGE_PAYMENT_KEY);
+    } catch (e) {
+      console.error("Błąd podczas zapisywania metody płatności:", e);
+    }
+  }, [paymentMethod]);
+
+  const setAddress = (addr: AddressData) => setAddressState(addr);
+  const setPaymentMethod = (method: PaymentMethod) => setPaymentMethodState(method);
+  const clearCheckout = () => {
+    setAddressState(undefined);
+    setPaymentMethodState(undefined);
+    try {
+      localStorage.removeItem(STORAGE_ADDRESS_KEY);
+      localStorage.removeItem(STORAGE_PAYMENT_KEY);
+    } catch {}
+  };
 
   const addItem: CartContextValue["addItem"] = (item, quantity = 1) => {
     console.log("CartContext: Dodawanie produktu:", item, "ilość:", quantity);
@@ -99,8 +172,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [items]);
 
   const value = useMemo(
-    () => ({ items, count, addItem, updateQuantity, removeItem, clear }),
-    [items, count]
+    () => ({ items, count, addItem, updateQuantity, removeItem, clear, address, setAddress, paymentMethod, setPaymentMethod, clearCheckout }),
+    [items, count, address, paymentMethod]
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

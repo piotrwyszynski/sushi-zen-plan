@@ -246,7 +246,7 @@ export const Cart = () => {
                 </div>
 
                 <Button className="w-full hero-gradient hover:shadow-glow-primary" asChild>
-                  <Link to="/checkout">
+                  <Link to="/checkout/address">
                     Przejdź do Kasy <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

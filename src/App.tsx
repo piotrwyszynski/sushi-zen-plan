@@ -15,6 +15,9 @@ import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Login";
 import { Cart } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
+import { CheckoutAddress } from "./pages/CheckoutAddress";
+import { CheckoutPayment } from "./pages/CheckoutPayment";
+import { CheckoutSummary } from "./pages/CheckoutSummary";
 import NotFound from "./pages/NotFound";
 import { CartProvider } from "./context/CartContext";
 
@@ -39,6 +42,9 @@ const App = () => (
                 <Route path="/login" element={<Login />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
+                <Route path="/checkout/address" element={<CheckoutAddress />} />
+                <Route path="/checkout/payment" element={<CheckoutPayment />} />
+                <Route path="/checkout/summary" element={<CheckoutSummary />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

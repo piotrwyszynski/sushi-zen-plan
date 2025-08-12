@@ -23,14 +23,17 @@ export const Checkout = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-sm text-muted-foreground">
-                Moduł kasy jest w przygotowaniu. Wróć do koszyka, aby edytować zamówienie.
+                Wybierz kolejny krok, aby sfinalizować zamówienie.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button variant="outline" asChild>
-                  <Link to="/cart">Powrót do koszyka</Link>
-                </Button>
                 <Button className="hero-gradient hover:shadow-glow-primary" asChild>
-                  <Link to="/categories">Kontynuuj zakupy</Link>
+                  <Link to="/checkout/address">Dane adresowe</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link to="/checkout/payment">Metoda płatności</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link to="/checkout/summary">Podsumowanie</Link>
                 </Button>
               </div>
             </CardContent>
