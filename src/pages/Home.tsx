@@ -62,7 +62,7 @@ export const Home = () => {
         <div className="relative z-10 text-center space-y-6 max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
             Stworzone z
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block leading-snug">
               Pasją i Precyzją
             </span>
           </h1>
