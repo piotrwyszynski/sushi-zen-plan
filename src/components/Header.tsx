@@ -9,13 +9,16 @@ import {
   User, 
   Menu,
   Facebook,
-  Instagram
+  Instagram,
+  LogOut
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/hooks/useAuth";
 
 export const Header = () => {
   const { count: cartCount } = useCart();
+  const { user, signOut } = useAuth();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
@@ -84,11 +87,24 @@ export const Header = () => {
           </Button>
 
           {/* User Account */}
-          <Button variant="ghost" size="sm" asChild>
-            <Link to="/login">
-              <User className="h-4 w-4" />
-            </Link>
-          </Button>
+          {user ? (
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="sm" asChild>
+                <Link to="/profile">
+                  <User className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button variant="ghost" size="sm" onClick={signOut}>
+                <LogOut className="h-4 w-4" />
+              </Button>
+            </div>
+          ) : (
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/login">
+                <User className="h-4 w-4" />
+              </Link>
+            </Button>
+          )}
 
           {/* Shopping Cart */}
           <Button variant="ghost" size="sm" className="relative" asChild>

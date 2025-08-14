@@ -6,24 +6,56 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/components/ui/use-toast";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { useAuth } from "@/hooks/useAuth";
+import { useOrders } from "@/hooks/useOrders";
 
 export const CheckoutSummary = () => {
   const navigate = useNavigate();
-  const { items, address, paymentMethod } = useCart();
+  const { items, address, paymentMethod, clear } = useCart();
   const { toast } = useToast();
+  const { user } = useAuth();
+  const { createOrder } = useOrders();
 
   useEffect(() => {
     document.title = "Podsumowanie – Sushi Strefa";
-  }, []);
+    if (!user) {
+      navigate('/login');
+    }
+  }, [user, navigate]);
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const tax = subtotal * 0.08;
   const delivery = subtotal > 200 ? 0 : 39.99;
   const total = subtotal + tax + delivery;
 
-  const placeOrder = () => {
-    toast({ title: "Zamówienie", description: "Finalizacja zamówienia w przygotowaniu." });
-    navigate("/");
+  const placeOrder = async () => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+
+    if (!address) {
+      navigate('/checkout/address');
+      return;
+    }
+
+    const orderData = {
+      delivery_name: address.fullName,
+      delivery_phone: address.phone,
+      delivery_address: `${address.street} ${address.building}${address.apartment ? "/" + address.apartment : ""}, ${address.postalCode} ${address.city}`,
+      payment_method: paymentMethod || 'cash'
+    };
+
+    const result = await createOrder(orderData, items);
+    
+    if (result.success) {
+      clear();
+      toast({ 
+        title: "Zamówienie złożone!", 
+        description: `Numer zamówienia: ${result.orderNumber}${result.isDiscountOrder ? ' (z 50% zniżką!)' : ''}` 
+      });
+      navigate("/");
+    }
   };
 
   return (
